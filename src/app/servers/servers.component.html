@@ -1,0 +1,21 @@
+<label>Server Name</label>
+<!-- <input
+ type="text"
+ class="form-control"
+ (input)="onUpdateServerName($event)"> -->
+
+<!--Para vincular algunos datos más fácil, usamos el Enlace de datos bidireccional. Combinamos el enlace de propiedad y evento-->
+<input
+ type="text"
+ class="form-control"
+ [(ngModel)]="serverName">
+<!-- <p>{{ serverName }}</p> -->
+
+<button 
+    class="btn btn primary" 
+    [disabled]="!allowNewServer"
+    (click)="onCreateServer()">Add server</button><!--Enlazar dinámicamente alguna propierdad--><!--Al agregar el signo de exlamación nos aseguramos de que sólo esté deshabilitado si es falso-->
+<!-- <p [innerText]="allowNewServer"></p> -->
+<p>{{ serverCreationStatus }}</p>
+<app-server></app-server>
+<app-server></app-server>
